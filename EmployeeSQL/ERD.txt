@@ -1,0 +1,40 @@
+#Title table
+Titles
+-----
+title_id PK varchar(10)
+title varchar(25)
+
+
+Departments
+------
+dept_no PK varchar(5)
+dept_name varchar(25)
+
+Employees
+------
+emp_no PK int
+emp_title_id varchar(10) FK >- "Titles"."title_id"
+birth_date date
+first_name varchar(50)
+last_name varchar(50)
+sex varchar(1)
+hire_date date
+
+Salaries
+------
+emp_no int FK - "Employees"."emp_no"
+salary int
+
+dept_manager
+------
+dept_no varchar(5) FK >- "Departments"."dept_no"
+emp_no int FK - "Employees"."emp_no"
+
+dept_emp
+-------
+emp_no int FK >- "Employees"."emp_no"
+dept_no varchar(5) FK >- "Departments"."dept_no"
+
+
+
+
